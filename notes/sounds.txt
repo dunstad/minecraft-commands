@@ -1,0 +1,656 @@
+SUCCESS SOUNDS:
+random.levelup
+random.orb
+note.pling
+
+NEW MESSAGE
+execute @a ~ ~ ~ playsound random.click @s ~ ~ ~ 1 1.6
+
+WHOOSH
+vr.stutterturn
+
+MAGIC
+beacon.power
+beacon.activate
+mob.evocation_illager.cast_spell
+PROPULSION
+mob.cat.hiss (pitch = 2)
+
+CREEPY
+mob.wither.spawn
+mob.wolf.whine
+
+IMPRESSIVE
+mob.wither.break_block
+
+METALLIC
+block.false_permissions
+
+DISGUSTING
+mob.spider.step
+CRACKING
+block.turtle_egg.crack
+
+----------------------------
+
+Sound Name (for /playsound) 	Category
+
+ambient.weather.thunder 	weather
+ambient.weather.lightning.impact 	weather
+ambient.weather.rain 	weather
+beacon.activate 	block
+beacon.ambient 	block
+beacon.deactivate 	block
+beacon.power 	block
+block.lantern.break 	block
+block.lantern.fall 	block
+block.lantern.hit 	block
+block.lantern.place 	block
+block.lantern.step 	block
+block.bamboo.break 	block
+block.bamboo.fall 	block
+block.bamboo.hit 	block
+block.bamboo.place 	block
+block.bamboo.step 	block
+block.bamboo_sapling.place 	block
+block.bamboo_sapling.break 	block
+block.campfire.crackle 	block
+block.barrel.close 	–
+block.barrel.open 	–
+block.campfire.crackle 	block
+block.barrel.close 	–
+block.barrel.open 	–
+block.false_permissions 	block
+block.end_portal.spawn 	–
+block.end_portal_frame.fill 	–
+block.itemframe.add_item 	block
+block.itemframe.break 	block
+block.itemframe.place 	block
+block.itemframe.remove_item 	block
+block.itemframe.rotate_item 	block
+block.chorusflower.death 	block
+block.chorusflower.grow 	block
+block.composter.fill 	block
+block.composter.fill_success 	block
+block.composter.empty 	block
+block.composter.ready 	block
+block.loom.use 	block
+ui.loom.take_result 	ui
+ui.cartography_table.take_result 	ui
+ui.loom.select_pattern 	ui
+block.stonecutter.use 	block
+ui.stonecutter.take_result 	ui
+block.cartography_table.use 	block
+block.grindstone.use 	block
+block.turtle_egg.drop 	block
+block.turtle_egg.break 	block
+block.turtle_egg.crack 	block
+block.scaffolding.break 	–
+block.scaffolding.fall 	–
+block.scaffolding.hit 	–
+block.scaffolding.place 	–
+block.scaffolding.step 	–
+block.scaffolding.climb 	block
+block.sweet_berry_bush.break 	block
+block.sweet_berry_bush.place 	block
+block.sweet_berry_bush.hurt 	block
+block.sweet_berry_bush.pick 	block
+bucket.empty_lava 	bucket
+bucket.empty_water 	bucket
+bucket.fill_lava 	bucket
+bucket.fill_water 	bucket
+bucket.fill_fish 	bucket
+bucket.empty_fish 	bucket
+bottle.dragonbreath 	bottle
+cauldron.explode 	block
+cauldron.dyearmor 	block
+cauldron.cleanarmor 	block
+cauldron.cleanbanner 	block
+cauldron.fillpotion 	block
+cauldron.takepotion 	block
+cauldron.fillwater 	block
+cauldron.takewater 	block
+cauldron.adddye 	block
+conduit.activate 	block
+conduit.ambient 	block
+conduit.attack 	block
+conduit.deactivate 	block
+conduit.short 	block
+crossbow.loading.start 	neutral
+crossbow.loading.middle 	neutral
+crossbow.loading.end 	neutral
+crossbow.shoot 	neutral
+crossbow.quick_charge.start 	neutral
+crossbow.quick_charge.middle 	neutral
+crossbow.quick_charge.end 	neutral
+damage.fallbig 	player
+damage.fallsmall 	player
+elytra.loop 	neutral
+game.player.attack.nodamage 	–
+game.player.attack.strong 	–
+game.player.hurt 	player
+game.player.die 	player
+dig.cloth 	block
+dig.grass 	block
+dig.gravel 	block
+dig.sand 	block
+dig.snow 	block
+dig.stone 	block
+dig.wood 	block
+tile.piston.in 	block
+tile.piston.out 	block
+fire.fire 	block
+fire.ignite 	block
+leashknot.break 	block
+leashknot.place 	block
+firework.blast 	–
+firework.large_blast 	–
+firework.launch 	–
+firework.shoot 	–
+firework.twinkle 	–
+armor.equip_chain 	neutral
+armor.equip_diamond 	neutral
+armor.equip_generic 	neutral
+armor.equip_gold 	neutral
+armor.equip_iron 	neutral
+armor.equip_leather 	neutral
+liquid.lava 	block
+liquid.lavapop 	block
+liquid.water 	block
+bubble.pop 	block
+bubble.up 	block
+bubble.upinside 	–
+bubble.down 	block
+bubble.downinside 	–
+minecart.base 	neutral
+minecart.inside 	neutral
+block.furnace.lit 	neutral
+block.blastfurnace.fire_crackle 	–
+block.smoker.smoke 	–
+mob.agent.spawn 	neutral
+mob.armor_stand.break 	neutral
+mob.armor_stand.hit 	neutral
+mob.armor_stand.land 	neutral
+mob.armor_stand.place 	neutral
+mob.bat.death 	neutral
+mob.bat.hurt 	neutral
+mob.bat.idle 	neutral
+mob.bat.takeoff 	neutral
+mob.blaze.breathe 	hostile
+mob.blaze.death 	hostile
+mob.blaze.hit 	hostile
+mob.blaze.shoot 	–
+mob.chicken.hurt 	neutral
+mob.chicken.plop 	neutral
+mob.chicken.say 	neutral
+mob.chicken.step 	neutral
+mob.cow.hurt 	neutral
+mob.cow.say 	neutral
+mob.cow.step 	neutral
+mob.cow.milk 	neutral
+mob.creeper.death 	hostile
+mob.creeper.say 	hostile
+mob.dolphin.idle_water 	–
+mob.dolphin.attack 	–
+mob.dolphin.blowhole 	–
+mob.dolphin.death 	–
+mob.dolphin.eat 	–
+mob.dolphin.hurt 	–
+mob.dolphin.idle 	–
+mob.dolphin.jump 	–
+mob.dolphin.play 	–
+mob.dolphin.splash 	–
+mob.dolphin.swim 	–
+mob.drowned.say_water 	–
+mob.drowned.death_water 	–
+mob.drowned.hurt_water 	–
+mob.drowned.say 	–
+mob.drowned.death 	–
+mob.drowned.hurt 	–
+mob.drowned.shoot 	–
+mob.drowned.step 	–
+mob.drowned.swim 	–
+entity.zombie.converted_to_drowned 	–
+mob.endermen.death 	hostile
+mob.endermen.hit 	hostile
+mob.endermen.idle 	hostile
+mob.endermen.portal 	hostile
+mob.endermen.scream 	hostile
+mob.endermen.stare 	hostile
+mob.enderdragon.death 	hostile
+mob.enderdragon.hit 	hostile
+mob.enderdragon.flap 	neutral
+mob.enderdragon.growl 	hostile
+mob.fox.ambient 	neutral
+mob.fox.hurt 	neutral
+mob.fox.death 	neutral
+mob.fox.aggro 	hostile
+mob.fox.sniff 	neutral
+mob.fox.bite 	hostile
+mob.fox.eat 	neutral
+mob.fox.screech 	neutral
+mob.fox.sleep 	neutral
+mob.fox.spit 	neutral
+mob.ghast.affectionate_scream
+(min_distance = 100) 	hostile
+mob.ghast.charge
+(min_distance = 100) 	hostile
+mob.ghast.death
+(min_distance = 100) 	hostile
+mob.ghast.fireball 	hostile
+mob.ghast.moan
+(min_distance = 100) 	hostile
+mob.ghast.scream
+(min_distance = 100) 	hostile
+mob.guardian.ambient 	hostile
+mob.guardian.attack_loop 	hostile
+mob.elderguardian.curse 	hostile
+mob.elderguardian.death 	hostile
+mob.elderguardian.hit 	hostile
+mob.elderguardian.idle 	hostile
+mob.guardian.flop 	hostile
+mob.guardian.death 	hostile
+mob.guardian.hit 	hostile
+mob.guardian.land_death 	hostile
+mob.guardian.land_hit 	hostile
+mob.guardian.land_idle 	hostile
+mob.fish.flop 	neutral
+mob.fish.hurt 	neutral
+mob.fish.step 	neutral
+mob.llama.angry 	neutral
+mob.llama.death 	neutral
+mob.llama.idle 	neutral
+mob.llama.spit 	neutral
+mob.llama.hurt 	–
+mob.llama.eat 	–
+mob.llama.step 	–
+mob.llama.swag 	neutral
+mob.horse.angry 	neutral
+mob.horse.armor 	neutral
+mob.horse.breathe 	neutral
+mob.horse.death 	neutral
+mob.horse.donkey.angry 	neutral
+mob.horse.donkey.death 	neutral
+mob.horse.donkey.hit 	neutral
+mob.horse.donkey.idle 	neutral
+mob.horse.eat 	–
+mob.horse.gallop 	neutral
+mob.horse.hit 	neutral
+mob.horse.idle 	neutral
+mob.horse.jump 	neutral
+mob.horse.land 	neutral
+mob.horse.leather 	neutral
+mob.horse.skeleton.death 	neutral
+mob.horse.skeleton.hit 	neutral
+mob.horse.skeleton.idle 	neutral
+mob.horse.soft 	neutral
+mob.horse.wood 	neutral
+mob.horse.zombie.death 	neutral
+mob.horse.zombie.hit 	neutral
+mob.horse.zombie.idle 	neutral
+mob.husk.ambient 	–
+mob.husk.death 	–
+mob.husk.hurt 	–
+mob.husk.step 	–
+mob.ravager.ambient 	–
+mob.ravager.bite 	–
+mob.ravager.celebrate 	–
+mob.ravager.death 	–
+mob.ravager.hurt 	–
+mob.ravager.roar 	–
+mob.ravager.step 	–
+mob.ravager.stun 	–
+mob.irongolem.throw 	hostile
+mob.irongolem.death 	hostile
+mob.irongolem.hit 	hostile
+mob.irongolem.walk 	hostile
+mob.shulker.ambient 	neutral
+mob.shulker.close 	neutral
+mob.shulker.death 	neutral
+mob.shulker.close.hurt 	neutral
+mob.shulker.hurt 	neutral
+mob.shulker.open 	neutral
+mob.shulker.shoot 	neutral
+mob.shulker.teleport 	neutral
+mob.shulker.bullet.hit 	neutral
+mob.magmacube.big 	hostile
+mob.magmacube.jump 	hostile
+mob.magmacube.small 	hostile
+mob.mooshroom.convert 	neutral
+mob.mooshroom.eat 	neutral
+mob.mooshroom.suspicious_milk 	neutral
+mob.parrot.idle 	neutral
+mob.parrot.hurt 	neutral
+mob.parrot.death 	neutral
+mob.parrot.step 	neutral
+mob.parrot.eat 	neutral
+mob.parrot.fly 	neutral
+mob.phantom.bite 	hostile
+mob.phantom.death 	hostile
+mob.phantom.hurt 	hostile
+mob.phantom.idle 	hostile
+mob.phantom.swoop 	hostile
+mob.pig.death 	neutral
+mob.pig.boost 	neutral
+mob.pig.say 	neutral
+mob.pig.step 	neutral
+mob.pillager.celebrate 	–
+mob.pillager.death 	neutral
+mob.pillager.hurt 	neutral
+mob.pillager.idle 	neutral
+mob.rabbit.hurt 	neutral
+mob.rabbit.idle 	neutral
+mob.rabbit.hop 	neutral
+mob.rabbit.death 	neutral
+mob.sheep.say 	neutral
+mob.sheep.shear 	neutral
+mob.sheep.step 	neutral
+mob.silverfish.hit 	hostile
+mob.silverfish.kill 	hostile
+mob.silverfish.say 	hostile
+mob.silverfish.step 	hostile
+mob.endermite.hit 	hostile
+mob.endermite.kill 	hostile
+mob.endermite.say 	hostile
+mob.endermite.step 	hostile
+mob.skeleton.death 	hostile
+mob.skeleton.hurt 	hostile
+mob.skeleton.say 	hostile
+mob.skeleton.step 	hostile
+mob.slime.big 	hostile
+mob.slime.small 	hostile
+mob.slime.attack 	–
+mob.slime.death 	–
+mob.slime.hurt 	–
+mob.slime.jump 	–
+mob.slime.squish 	–
+mob.snowgolem.death 	–
+mob.snowgolem.hurt 	–
+mob.snowgolem.shoot 	–
+mob.spider.death 	hostile
+mob.spider.say 	hostile
+mob.spider.step 	hostile
+mob.squid.ambient 	neutral
+mob.squid.death 	neutral
+mob.squid.hurt 	neutral
+mob.turtle.ambient 	neutral
+mob.turtle_baby.born 	neutral
+mob.turtle.death 	neutral
+mob.turtle_baby.death 	neutral
+mob.turtle.hurt 	neutral
+mob.turtle_baby.hurt 	neutral
+mob.turtle.step 	–
+mob.turtle_baby.step 	–
+mob.turtle.swim 	–
+mob.stray.ambient 	–
+mob.stray.death 	–
+mob.stray.hurt 	–
+mob.stray.step 	–
+mob.villager.death 	neutral
+mob.villager.haggle 	neutral
+mob.villager.hit 	neutral
+mob.villager.idle 	neutral
+mob.villager.no 	neutral
+mob.villager.yes 	neutral
+mob.vindicator.celebrate 	–
+mob.vindicator.death 	hostile
+mob.vindicator.hurt 	hostile
+mob.vindicator.idle 	neutral
+mob.evocation_fangs.attack 	hostile
+mob.evocation_illager.ambient 	hostile
+mob.evocation_illager.cast_spell 	hostile
+mob.evocation_illager.celebrate 	–
+mob.evocation_illager.death 	hostile
+mob.evocation_illager.hurt 	hostile
+mob.evocation_illager.prepare_attack 	hostile
+mob.evocation_illager.prepare_summon 	hostile
+mob.evocation_illager.prepare_wololo 	hostile
+mob.vex.ambient 	hostile
+mob.vex.death 	hostile
+mob.vex.hurt 	hostile
+mob.vex.charge 	hostile
+item.book.page_turn 	–
+item.book.put 	–
+block.bell.hit 	–
+item.trident.hit_ground 	–
+item.trident.hit 	–
+item.trident.return 	–
+item.trident.riptide_1 	–
+item.trident.riptide_2 	–
+item.trident.riptide_3 	–
+item.trident.throw 	–
+item.trident.thunder 	–
+item.shield.block 	–
+mob.wanderingtrader.idle 	–
+mob.wanderingtrader.death 	–
+mob.wanderingtrader.disappeared 	–
+mob.wanderingtrader.drink_milk 	–
+mob.wanderingtrader.drink_potion 	–
+mob.wanderingtrader.haggle 	–
+mob.wanderingtrader.yes 	–
+mob.wanderingtrader.no 	–
+mob.wanderingtrader.hurt 	–
+mob.wanderingtrader.reappeared 	–
+mob.witch.ambient 	–
+mob.witch.celebrate 	–
+mob.witch.death 	–
+mob.witch.hurt 	–
+mob.witch.drink 	–
+mob.witch.throw 	–
+mob.wither.ambient 	–
+mob.wither.break_block 	–
+mob.wither.death 	–
+mob.wither.hurt 	–
+mob.wither.shoot 	–
+mob.wither.spawn 	–
+mob.wolf.bark 	neutral
+mob.wolf.death 	neutral
+mob.wolf.growl 	neutral
+mob.wolf.hurt 	neutral
+mob.wolf.panting 	neutral
+mob.wolf.shake 	neutral
+mob.wolf.step 	neutral
+mob.wolf.whine 	neutral
+mob.ocelot.idle 	neutral
+mob.ocelot.death 	neutral
+mob.cat.eat 	neutral
+mob.cat.hiss 	neutral
+mob.cat.hit 	neutral
+mob.cat.meow 	neutral
+mob.cat.beg 	neutral
+mob.cat.straymeow 	neutral
+mob.cat.purr 	neutral
+mob.cat.purreow 	neutral
+mob.polarbear_baby.idle 	neutral
+mob.polarbear.idle 	neutral
+mob.polarbear.step 	neutral
+mob.polarbear.warning 	hostile
+mob.polarbear.hurt 	hostile
+mob.polarbear.death 	hostile
+mob.panda_baby.idle, pitch = 1.5 	neutral
+mob.panda.idle 	neutral
+mob.panda.idle.aggressive 	neutral
+mob.panda.idle.worried 	neutral
+mob.panda.step 	neutral
+mob.panda.presneeze 	–
+mob.panda.sneeze 	–
+mob.panda.hurt 	hostile
+mob.panda.death 	hostile
+mob.panda.bite 	hostile
+mob.panda.eat 	neutral
+mob.panda.cant_breed 	neutral
+mob.zombie.death 	hostile
+mob.zombie.hurt 	hostile
+mob.zombie.remedy 	hostile
+mob.zombie.unfect 	hostile
+mob.zombie.say 	hostile
+mob.zombie.step 	hostile
+mob.zombie.wood 	hostile
+mob.zombie.woodbreak 	hostile
+mob.zombiepig.zpig 	hostile
+mob.zombiepig.zpigangry 	hostile
+mob.zombiepig.zpigdeath 	hostile
+mob.zombiepig.zpighurt 	hostile
+mob.zombie_villager.say 	–
+mob.zombie_villager.death 	–
+mob.zombie_villager.hurt 	–
+note.banjo 	record
+note.bass 	record
+note.bassattack 	record
+note.bd 	record
+note.bell 	record
+note.bit 	record
+note.cow_bell 	record
+note.didgeridoo 	record
+note.flute 	record
+note.guitar 	record
+note.harp 	record
+note.hat 	record
+note.chime 	record
+note.iron_xylophone 	record
+note.pling 	record
+note.snare 	record
+note.xylophone 	record
+portal.portal 	block
+portal.travel 	ui
+portal.trigger 	ui
+random.anvil_break 	block
+random.anvil_land 	block
+random.anvil_use 	block
+random.bow 	neutral
+random.bowhit 	neutral
+random.break 	player
+random.burp 	player
+random.chestclosed 	block
+random.chestopen 	block
+random.shulkerboxclosed 	block
+random.shulkerboxopen 	block
+random.enderchestopen 	block
+random.enderchestclosed 	block
+random.potion.brewed 	block
+random.click 	ui
+random.door_close 	block
+random.door_open 	block
+random.drink 	player
+random.drink_honey 	player
+random.eat 	player
+random.explode 	block
+random.fizz 	block
+random.fuse 	block
+random.glass 	block
+random.levelup 	player
+random.orb 	player
+random.pop 	player
+random.pop2 	player
+random.screenshot 	ui
+random.splash 	player
+random.swim 	player
+random.hurt 	player
+random.toast 	ui
+random.totem 	player
+camera.take_picture 	player
+use.ladder 	neutral
+hit.ladder 	neutral
+fall.ladder 	neutral
+step.ladder 	neutral
+use.cloth 	neutral
+hit.cloth 	neutral
+fall.cloth 	neutral
+step.cloth 	neutral
+use.grass 	neutral
+hit.grass 	neutral
+fall.grass 	neutral
+step.grass 	neutral
+use.gravel 	neutral
+hit.gravel 	neutral
+fall.gravel 	neutral
+step.gravel 	neutral
+use.sand 	neutral
+hit.sand 	neutral
+fall.sand 	neutral
+step.sand 	neutral
+use.slime 	neutral
+hit.slime 	neutral
+fall.slime 	neutral
+step.slime 	neutral
+use.snow 	neutral
+hit.snow 	neutral
+fall.snow 	neutral
+step.snow 	neutral
+use.stone 	neutral
+hit.stone 	neutral
+fall.stone 	neutral
+fall.egg 	neutral
+step.stone 	neutral
+use.wood 	neutral
+hit.wood 	neutral
+fall.wood 	neutral
+step.wood 	neutral
+jump.cloth 	neutral
+jump.grass 	neutral
+jump.gravel 	neutral
+jump.sand 	neutral
+jump.snow 	neutral
+jump.stone 	neutral
+jump.wood 	neutral
+jump.slime 	neutral
+land.cloth 	neutral
+land.grass 	neutral
+land.gravel 	neutral
+land.sand 	neutral
+land.snow 	neutral
+land.stone 	neutral
+land.wood 	neutral
+land.slime 	neutral
+vr.stutterturn 	player
+record.13
+(max_distance = 64) 	–
+record.cat
+(max_distance = 64) 	–
+record.blocks
+(max_distance = 64) 	–
+record.chirp
+(max_distance = 64) 	–
+record.far
+(max_distance = 64) 	–
+record.mall
+(max_distance = 64) 	–
+record.mellohi
+(max_distance = 64) 	–
+record.stal
+(max_distance = 64) 	–
+record.strad
+(max_distance = 64) 	–
+record.ward
+(max_distance = 64) 	–
+record.11
+(max_distance = 64) 	–
+record.wait
+(max_distance = 64) 	–
+raid.horn
+(max_distance = 128) 	neutral
+music.menu 	music
+music.game 	music
+music.game.creative 	music
+music.game.end 	music
+music.game.endboss 	music
+music.game.nether 	music
+music.game.credits 	music
+mob.bee.aggressive
+(max_distance = 8) 	neutral
+mob.bee.death 	neutral
+mob.bee.hurt 	neutral
+mob.bee.loop
+(max_distance = 6) 	neutral
+mob.bee.pollinate
+(max_distance = 12) 	neutral
+mob.bee.sting 	neutral
+block.beehive.enter
+(max_distance = 14) 	block
+block.beehive.exit
+(max_distance = 14) 	block
+block.beehive.shear 	block
+block.beehive.work
+(max_distance = 12) 	block
+block.beehive.drip
+(max_distance = 8) 	block 

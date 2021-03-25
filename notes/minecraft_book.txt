@@ -1,0 +1,49 @@
+Color codes:
+§r 	Reset 
+§0 	black
+§1 	dark_blue
+§2 	dark_green
+§3 	dark_aqua
+§4 	dark_red
+§5 	dark_purple
+§6 	gold
+§7 	gray
+§8 	dark_gray
+§9 	blue
+§a 	green
+§b 	aqua
+§c 	red
+§d 	light_purple
+§e 	yellow
+§f 	white
+
+Useful Unicode shapes:
+▲ ▼ ◀ ▶
+△ ▷ ▽ ◁
+◼ ◻
+
+Test diagram:
+
+□□□□□□§r
+□§6■■■■□§r
+□§6⟙□□□□§r
+□§8△□□□□§r
+
+■§6■§r
+
+Elytra:
+
+§f◼§f◼§f◼§0◼§0◼§0◼§0◼§f◼§f◼§f◼
+§f◼§0◼§0◼§7◼§f◼§f◼§7◼§0◼§0◼§f◼
+§0◼§8◼§7◼§7◼§f◼§f◼§7◼§7◼§8◼§0◼
+§0◼§8◼§7◼§7◼§f◼§f◼§7◼§7◼§8◼§0◼
+
+§0◼§8◼§8◼§7◼§f◼§f◼§7◼§8◼§8◼§0◼
+§f◼§0◼§8◼§7◼§f◼§f◼§7◼§8◼§0◼§f◼
+§f◼§0◼§8◼§0◼§f◼§f◼§0◼§8◼§0◼§f◼
+§f◼§f◼§0◼§f◼§f◼§f◼§f◼§0◼§f◼§f◼
+
+§f◼§f◼§0◼§0◼§0◼§f◼§f◼
+§0◼§7◼§7◼§f◼§7◼§7◼§0◼
+§0◼§8◼§7◼§f◼§7◼§8◼§0◼
+§f◼§8◼§7◼§f◼§7◼§8◼§f◼

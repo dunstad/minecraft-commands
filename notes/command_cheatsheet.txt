@@ -1,0 +1,240 @@
+Server Management
+
+  Ban Player
+    /ban [target] [reason]
+  Ban IP Address
+    /ban-ip [target/IP address] [reason]
+  View Banned Users
+    /banlist players
+  	/banlist IPs
+  Change Default Gamemode
+    /defaultgamemode (survival/creative/adventure/spectator)
+  Remove Operator Privileges
+    /deop [target]
+  Force a Chunk to Load Constantly
+    /forceload (add/remove) (chunk coords)
+    /forceload remove all
+    /forceload query (chunk coords)
+  Set the Current Gamemode
+    /gamemode (survival/creative/adventure/spectator) [target]
+  Set a Gamerule
+    /gamerule [RuleName] (RuleValues)
+  List Players on Server
+    /list
+    /list uuids
+  Kick Player
+    /kick [target] [reason]
+  Give Operator Status
+    /op [player]
+  Unban Player
+    /pardon [player]
+  Unban IP Address
+    /pardon-ip [address]
+  Allow LAN Users to Join a Singleplayer World
+    /publish [port]
+  Save a Backup of a World
+    /save hold
+  	/save query
+    /save resume
+  Save a Server
+    /save-all (flush)
+  Disable Automatic Server Saves
+    /save-off
+  Enable Automatic Server Saves
+    /save-on
+  Change Idle Kick Time
+    /setidletimeout [minutes]
+  Set Maximum Player Count
+    /setmaxplayers [amount]
+  Set Default Spawn Point
+    /setworldspawn
+    /setworldspawn (x, y, z)
+  Make Spectator Follow Entity
+    /spectate [target] [player]
+  Spread Players Across World
+    /spreadplayers (center coords) [distance of spread] [maximum range] [team spread: true/false] [targets]
+  Shut Down Server
+    /stop
+  Count an Entity
+    /testfor [target]
+  Transfer to Another Server
+    /transferserver [ip address] [port]
+  Modify the Server Whitelist
+    /whitelist (add/remove) [player]
+    /whitelist (on/off)
+    /whitelist list
+    /whitelist reload
+  Enable/Disable Mob Events
+    /mobevent [event] (true/false)
+  Connect to a WebSocket Server
+    /wsserver OR /connect [ip]
+
+
+Player Modification and Cheats
+
+  Clear Items from Inventory
+    /clear [target]
+    /clear [target] [item]
+    /clear [target] [item] [amount]
+  Add or Remove Advancements
+    /advancement (grant/remove) [target] everything
+  Grant or Remove a Status Effect	For Java: /effect give [entity] [effect] (duration) (effect level) (hide particles: true/false)
+    For Bedrock: /effect [entity] [effect] (duration) (effect level) (hide particles: true/false)
+    For Java: /effect clear [entity] [effect]
+    For Bedrock: /effect [entity] clear
+  Enchant Current Weapon
+    /enchant [target] [enchantment ID] [level]
+  Add or Remove Experience Points	(/experience OR /xp) add [target] [amount] (points/levels)
+    (/experience OR /xp) set [target] [amount] (points/levels)
+    /experience query [target] (points/levels)
+  Give an Item to Someone
+    /give [target] [item] [amount]
+  Kill Entity
+    /kill
+    /kill [target]
+  Locate Structure
+    /locate [structure]
+  Add or Remove Recipes
+    /recipe (give/take) [player] [recipe name]
+  Set Player's Spawn Point
+    /spawnpoint
+    /spawnpoint (x, y, z)
+    /spawnpoint [optional target] (x, y, z)
+  Summon an Entity
+    /summon [entity]
+    /summon [entity] (x, y, z)
+  Teleport an Entity
+    /teleport OR /tp (coords)
+    /tp [target] (coords)
+    /tp [target] (coords) (rotation)
+    /tp [target] (coords) facing (location)
+    /tp [target] (coords) facing [entity]
+
+
+World Editing and Management
+
+  Clone a Region of Blocks
+    /clone (beginning coord of region) (end coord of region) (destination coords)
+  Replace Items in Blocks
+    /replaceitem block (block coords) [slot] [item] (amount)
+  Change a Block to a Different Block
+    /setblock (x, y, z) [block]
+  Edit Blocks in a Region
+    /fill (beginning region coord) (end region coord) [block type] (destroy/hollow/keep/outline/replace)
+  Test if a Block is Present
+    /testforblock (x, y, z) [block name]
+  Test if Blocks in Two Regions Are Identical
+    /testforblocks (beginning coord of region) (end coord of region) (comparison coords)
+  Add or Remove a Ticking Area
+    /tickingarea add (beginning coord of region) (end coord of region) [name]
+    /tickingarea add circle (center coord) (radius) [name]
+    /tickingarea remove (name/all)
+  Adjust or See the World Time
+    /time (add/set) [amount]
+    /time query (daytime/gametime/day)
+  Display or Edit a Title Screen
+    /title [player] (title/subtitle/actionbar) [title]
+    /title [player] times [fadein time] [stay time] [fadeout time]
+    /title [player] clear
+    /title [player] reset
+  Turn Rain On or Off
+    /toggledownfall
+  Change the Weather
+    /weather (clear/rain/thunder) [duration]
+  Display the World Seed
+    /seed
+  Modify the World Border
+    /worldborder add [distance] [time]
+    /worldborder center (coords)
+    /worldborder damage (amount/buffer) [variables]
+    /worldborder get
+    /worldborder set [distance] [time]
+    /worldborder warning (distance/time) [variables]
+  Toggle World Builder Status
+    /worldbuilder OR /wb
+
+
+Communication
+
+  Display Custom Action in Chat
+    /me [action]
+  Send a Private Message
+    (/msg OR /tell OR /w) [player] [message]
+  Send a Message to the Server
+    /say [message]
+  Send a Message to Your Team
+    (/teammsg OR /tm) [message]
+  Send a JSON Message to All Players
+    /tellraw [player] (message)
+
+
+Team and Scoreboard Management
+
+  Modify Player Teams
+    /team add [team name] [display name]
+    /team empty [team name]
+    /team join [team name] [players]
+    /team leave [players]
+    /team list [team name]
+    /team modify [team name] [attribute] [value]
+    /team remove [team name]
+  Modify the Scoreboard
+    /scoreboard objectives (add/list/modify/remove/setdisplay) [variables]
+    /scoreboard players (add/enable/get/list/operation/remove/reset/set) [variables]
+  Add, Remove, or View Scoreboard Tags
+    /tag [target] list
+    /tag [target] (add/remove) [tag]
+  Trigger a Scoreboard Objective
+    /trigger (objective name) [add/set(number)]
+
+
+Data Management
+
+  Customize Boss Health Bars
+    /bossbar (add/get/list/remove/set) [bossbar id] [additional parameters]
+  Modify How Data Packs are Loaded and Unloaded
+    /datapack disable [data pack name]
+    /datapack enable [data pack name] (first/last)
+    /datapack enable [data pack name] (before/after) [data pack]
+    /datapack list (available/enabled)
+  Enable or Disable Debugging
+    /debug (start/stop/report)
+  Get Help for a Command
+    /help [page] [command]
+  Play a Sound
+    /playsound [sound] [category] [player] [source coord] [volume] [pitch] [min volume]
+  Stop a Sound Playing
+    /stopsound [target]
+  Reload Data Packs
+    /reload
+  Schedule a Function to Run
+    /schedule function [function path] [time(d/s/t)]
+  Run a Function
+    /function [function path]
+
+
+Useful Target Modifiers
+
+  Target the Nearest Player
+    @p
+  Target a Random Player
+    @r
+  Target All Players
+    @a
+  Target All Entities
+    @e
+  Target a Team
+    [team=TeamName]
+  Target an Entity Type
+    [type=EntityTypeName]
+  Target Players With Specific EXP Levels
+    [level=LevelNumber]
+    [level=FromLevel..ToLevel]
+    [level=AboveLevel..]
+    [level=..BelowLevel]
+  Target Players in a Specific Gamemode
+    [gamemode=GamemodeName]
+  Targets Entities With a Specific Name
+    [name=TargetName]
+  Reverse a Target Modifier
+    [modifier=!target]
