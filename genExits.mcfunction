@@ -26,23 +26,23 @@ execute @e[type=minecraft:armor_stand, name=roomCenter] ~ ~ ~ tp @e[type=minecra
 execute @e[type=minecraft:armor_stand, name=roomCenter] ~ ~ ~ execute @e[type=minecraft:armor_stand, name="", x=~2, y=~, z=~, dx=1, dy=1, dz=1] ~ ~ ~ summon minecraft:armor_stand checkConnection
 execute @e[type=minecraft:armor_stand, name=roomCenter] ~ ~ ~ tp @e[type=minecraft:armor_stand, name=checkConnection, c=1, rm=0, r=4.5] ~14 ~ ~ facing ~15 ~ ~
 
-execute @p ~~~ tag @e[type=minecraft:armor_stand, name=""] list
-
 # then kill all the armor stands that are out of bounds
+# TODO: extend posX safe zone
 execute @e[type=minecraft:armor_stand, name=negXZBorder] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, x=~1, y=~, z=~1, dx=63, dz=63] add inBounds
 kill @e[type=minecraft:armor_stand, name=checkConnection, tag=!inBounds]
 tag @e[tag=inBounds] remove inBounds
 
 # at this point if there are no armor stands near previously generated rooms,
 # we regenerate the room
+
 # noReroll is for the entrance
 tag @e[type=minecraft:armor_stand, name=roomCenter, tag=!noReroll] add reroll
 
 # if there is a checkConnection near a room exit marker, do not reroll
-# TODO: these radii aren't right
 execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep] ~ ~ ~ execute @e[type=minecraft:armor_stand, name="", x=~, y=~, z=~, dx=1, dy=1, dz=1] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, c=1] add connected
-execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep] ~ ~ ~ execute @e[type=minecraft:armor_stand, name="", x=~, y=~, z=~, dx=1, dy=1, dz=1] ~ ~ ~ say connected!
-execute @e[tag=connected, c=1] ~ ~ ~ tag @e[tag=reroll] remove reroll
+# execute @e[tag=connected, c=1] ~ ~ ~ execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!connected, tag=!negXConnection, c=1] ~ ~ ~ tag @e[tag=reroll] remove reroll
+execute @e[tag=connected, c=1] ~ ~ ~ execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!connected, tag=!negXConnection, c=1] ~ ~ ~ tag @e[tag=reroll] add canEnter
+# execute @e[tag=connected, c=1] ~ ~ ~ tag @e[tag=reroll] remove reroll
 # the connection checker near the exit marker has served its purpose, remove it to prevent overwriting old rooms
 execute @e[tag=connected] ~ ~ ~ kill @s
 
@@ -51,14 +51,27 @@ execute @e[tag=connected] ~ ~ ~ kill @s
 kill @e[tag=negXConnection]
 # leave the exit marker stands so other rooms can see how to connect
 
-# TODO: kill any exit markers on top of other exit markers here?
-# doesn't seem totally necessary but might be a little more efficient
+# kill connection stands when not connected but room is already generated
+execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep] ~ ~ ~ execute @e[type=minecraft:armor_stand, name="", rm=0, r=5.5, c=1] ~ ~ ~ kill @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep, c=1]
+
+# out of bounds connections have been killed
+# negX connections have been killed
+# connections to other rooms have been killed
+# connections that would overwrite existing rooms have been killed
+# only connections to empty spaces should remain (and keep tagged connections from old rounds)
+
+# check if any room exits will remain
+execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep, c=1] ~ ~ ~ tag @e[tag=reroll] add canExit
+# check if there are other rooms left to generate
+execute @e[type=minecraft:armor_stand, name=checkConnection, tag=keep, c=1] ~ ~ ~ tag @e[tag=reroll] add roomsRemain
+
+# keep this room if (we can enter and exit it) or (we can enter and there are other rooms left to generate)
+tag @e[tag=canEnter, tag=canExit] remove reroll
+tag @e[tag=canEnter, tag=roomsRemain] remove reroll
 
 # if not rerolling, mark current exits as keepers
-execute @e[type=minecraft:armor_stand, name=roomCenter, tag=!reroll] ~ ~ ~ execute @e[type=minecraft:armor_stand, name=checkConnection] ~~~ say keepers!
 execute @e[type=minecraft:armor_stand, name=roomCenter, tag=!reroll] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection] add keep
 # if we're rerolling, we need to kill any connection stands summoned this round
-execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep] ~~~ say uh oh
 kill @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep]
 # and the exit markers
 execute @e[type=minecraft:armor_stand, name=roomCenter, tag=reroll] ~ ~ ~ kill @e[type=minecraft:armor_stand, name="", rm=0, r=4.5]
@@ -73,4 +86,7 @@ execute @e[tag=reroll] ~ ~ ~ tag @e[tag=nextRoom] remove nextRoom
 execute @e[tag=nextRoom] ^ ^ ^2 summon minecraft:armor_stand roomCenter
 kill @e[tag=nextRoom]
 
+tag @e[tag=canEnter] remove canEnter
+tag @e[tag=canExit] remove canExit
+tag @e[tag=roomsRemain] remove roomsRemain
 tag @e[tag=reroll] remove reroll
