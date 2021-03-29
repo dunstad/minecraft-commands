@@ -50,3 +50,5 @@ execute @e[type=minecraft:armor_stand, name=makeEntranceRoom] ~ ~ ~ summon minec
 # prevents the entrance from being regenerated for not connecting to other room exits
 tag @e[type=minecraft:armor_stand, name=roomCenter] add noReroll
 kill @e[type=minecraft:armor_stand, name=makeEntranceRoom]
+
+function genExits

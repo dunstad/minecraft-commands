@@ -27,8 +27,15 @@ execute @e[type=minecraft:armor_stand, name=roomCenter] ~ ~ ~ execute @e[type=mi
 execute @e[type=minecraft:armor_stand, name=roomCenter] ~ ~ ~ tp @e[type=minecraft:armor_stand, name=checkConnection, c=1, rm=0, r=4.5] ~14 ~ ~ facing ~15 ~ ~
 
 # then kill all the armor stands that are out of bounds
-# TODO: extend posX safe zone
-execute @e[type=minecraft:armor_stand, name=negXZBorder] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, x=~1, y=~, z=~1, dx=63, dz=63] add inBounds
+# 63 + 16 = 79
+execute @e[type=minecraft:armor_stand, name=negXZBorder] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, x=~1, y=~, z=~1, dx=79, dz=63] add inBounds
+
+# prepare floor exit stand
+# we need to change its name from checkConnection so those systems don't see it
+execute @e[type=minecraft:armor_stand, name=pozXZBorder] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, x=~, y=~, z=~, dx=15, dz=-63] add floorExit
+execute @e[tag=floorExit] ~ ~ ~ summon minecraft:armor_stand floorExit ^ ^ ^-14
+kill @e[tag=floorExit]
+
 kill @e[type=minecraft:armor_stand, name=checkConnection, tag=!inBounds]
 tag @e[tag=inBounds] remove inBounds
 
@@ -40,9 +47,7 @@ tag @e[type=minecraft:armor_stand, name=roomCenter, tag=!noReroll] add reroll
 
 # if there is a checkConnection near a room exit marker, do not reroll
 execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep] ~ ~ ~ execute @e[type=minecraft:armor_stand, name="", x=~, y=~, z=~, dx=1, dy=1, dz=1] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, c=1] add connected
-# execute @e[tag=connected, c=1] ~ ~ ~ execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!connected, tag=!negXConnection, c=1] ~ ~ ~ tag @e[tag=reroll] remove reroll
 execute @e[tag=connected, c=1] ~ ~ ~ execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!connected, tag=!negXConnection, c=1] ~ ~ ~ tag @e[tag=reroll] add canEnter
-# execute @e[tag=connected, c=1] ~ ~ ~ tag @e[tag=reroll] remove reroll
 # the connection checker near the exit marker has served its purpose, remove it to prevent overwriting old rooms
 execute @e[tag=connected] ~ ~ ~ kill @s
 
@@ -62,12 +67,12 @@ execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep] ~ ~ ~ ex
 
 # check if any room exits will remain
 execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep, c=1] ~ ~ ~ tag @e[tag=reroll] add canExit
-# check if there are other rooms left to generate
-execute @e[type=minecraft:armor_stand, name=checkConnection, tag=keep, c=1] ~ ~ ~ tag @e[tag=reroll] add roomsRemain
+# check if we have an exit yet
+execute @e[type=minecraft:armor_stand, name=floorExit] ~ ~ ~ tag @e[tag=reroll] add floorHasExit
 
-# keep this room if (we can enter and exit it) or (we can enter and there are other rooms left to generate)
+# keep this room if (we can enter and exit it) or (we can enter and there's a floor exit already)
 tag @e[tag=canEnter, tag=canExit] remove reroll
-tag @e[tag=canEnter, tag=roomsRemain] remove reroll
+tag @e[tag=canEnter, tag=floorHasExit] remove reroll
 
 # if not rerolling, mark current exits as keepers
 execute @e[type=minecraft:armor_stand, name=roomCenter, tag=!reroll] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection] add keep
@@ -80,7 +85,7 @@ kill @e[type=minecraft:armor_stand, name=roomCenter, tag=!reroll]
 
 
 # and we can generate new rooms from the armor stands we teleported earlier
-tag @r[type=minecraft:armor_stand, name=checkConnection, c=1] add nextRoom
+tag @r[type=minecraft:armor_stand, name=checkConnection, tag=!floorExit c=1] add nextRoom
 # don't progress to a new room when rerolling
 execute @e[tag=reroll] ~ ~ ~ tag @e[tag=nextRoom] remove nextRoom
 execute @e[tag=nextRoom] ^ ^ ^2 summon minecraft:armor_stand roomCenter
@@ -88,5 +93,7 @@ kill @e[tag=nextRoom]
 
 tag @e[tag=canEnter] remove canEnter
 tag @e[tag=canExit] remove canExit
-tag @e[tag=roomsRemain] remove roomsRemain
+tag @e[tag=floorHasExit] remove floorHasExit
 tag @e[tag=reroll] remove reroll
+
+function genFloorExit

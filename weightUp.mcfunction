@@ -1,3 +1,5 @@
+# TODO: don't hardcode the stand name
+# tp one up, save structure, load structure?
 summon minecraft:armor_stand randomRoom ~ ~2 ~
 scoreboard objectives add weight dummy
 scoreboard players set @p weight 0
