@@ -34,7 +34,6 @@ execute @e[type=minecraft:armor_stand, name=negXZBorder] ~ ~ ~ tag @e[type=minec
 # we need to change its name from checkConnection so those systems don't see it
 execute @e[type=minecraft:armor_stand, name=posXZBorder] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, x=~, y=~, z=~-64, dx=15, dz=63] add floorExit
 # name=floorExit means we already have one, so remove the tag and treat it as out of bounds
-# TODO: fix room at the posX border generating forever... why can't it dead end?
 execute @e[type=minecraft:armor_stand, name=floorExit] ~ ~ ~ tag @e[tag=floorExit] remove inBounds
 execute @e[type=minecraft:armor_stand, name=floorExit] ~ ~ ~ tag @e[tag=floorExit] remove floorExit
 execute @e[tag=floorExit] ~ ~ ~ execute @e[type=minecraft:armor_stand, name=roomCenter, c=1] ~ ~ ~ summon minecraft:armor_stand floorExit
@@ -52,7 +51,7 @@ tag @e[type=minecraft:armor_stand, name=roomCenter, tag=!noReroll] add reroll
 
 # if there is a checkConnection near a room exit marker, do not reroll
 execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep] ~ ~ ~ execute @e[type=minecraft:armor_stand, name="", x=~, y=~, z=~, dx=1, dy=1, dz=1] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, c=1] add connected
-execute @e[tag=connected, c=1] ~ ~ ~ execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!connected, tag=!negXConnection, c=1] ~ ~ ~ tag @e[tag=reroll] add canEnter
+execute @e[tag=connected, c=1] ~ ~ ~ tag @e[tag=reroll] add canEnter
 # the connection checker near the exit marker has served its purpose, remove it to prevent overwriting old rooms
 kill @e[tag=connected]
 
