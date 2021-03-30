@@ -32,8 +32,13 @@ execute @e[type=minecraft:armor_stand, name=negXZBorder] ~ ~ ~ tag @e[type=minec
 
 # prepare floor exit stand
 # we need to change its name from checkConnection so those systems don't see it
-execute @e[type=minecraft:armor_stand, name=pozXZBorder] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, x=~, y=~, z=~, dx=15, dz=-63] add floorExit
-execute @e[tag=floorExit] ~ ~ ~ summon minecraft:armor_stand floorExit ^ ^ ^-14
+execute @e[type=minecraft:armor_stand, name=posXZBorder] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, x=~, y=~, z=~-64, dx=15, dz=63] add floorExit
+# name=floorExit means we already have one, so remove the tag and treat it as out of bounds
+# TODO: fix room at the posX border generating forever... why can't it dead end?
+execute @e[type=minecraft:armor_stand, name=floorExit] ~ ~ ~ tag @e[tag=floorExit] remove inBounds
+execute @e[type=minecraft:armor_stand, name=floorExit] ~ ~ ~ tag @e[tag=floorExit] remove floorExit
+execute @e[tag=floorExit] ~ ~ ~ execute @e[type=minecraft:armor_stand, name=roomCenter, c=1] ~ ~ ~ summon minecraft:armor_stand floorExit
+execute @e[tag=floorExit] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=roomCenter, c=1] add noReroll
 kill @e[tag=floorExit]
 
 kill @e[type=minecraft:armor_stand, name=checkConnection, tag=!inBounds]
@@ -42,14 +47,14 @@ tag @e[tag=inBounds] remove inBounds
 # at this point if there are no armor stands near previously generated rooms,
 # we regenerate the room
 
-# noReroll is for the entrance
+# noReroll is for the entrance and exit
 tag @e[type=minecraft:armor_stand, name=roomCenter, tag=!noReroll] add reroll
 
 # if there is a checkConnection near a room exit marker, do not reroll
 execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep] ~ ~ ~ execute @e[type=minecraft:armor_stand, name="", x=~, y=~, z=~, dx=1, dy=1, dz=1] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, c=1] add connected
 execute @e[tag=connected, c=1] ~ ~ ~ execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!connected, tag=!negXConnection, c=1] ~ ~ ~ tag @e[tag=reroll] add canEnter
 # the connection checker near the exit marker has served its purpose, remove it to prevent overwriting old rooms
-execute @e[tag=connected] ~ ~ ~ kill @s
+kill @e[tag=connected]
 
 # now that we're done checking for connection points, remove negX exits so they don't generate
 # this prevents the algorithm getting stuck generating a room that has nowhere to go
@@ -70,6 +75,9 @@ execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep, c=1] ~ ~
 # check if we have an exit yet
 execute @e[type=minecraft:armor_stand, name=floorExit] ~ ~ ~ tag @e[tag=reroll] add floorHasExit
 
+# TODO: allow rooms we can't enter or exit if floorExit exists, to prevent infinite generation
+# wait... shouldn't this not happen?
+
 # keep this room if (we can enter and exit it) or (we can enter and there's a floor exit already)
 tag @e[tag=canEnter, tag=canExit] remove reroll
 tag @e[tag=canEnter, tag=floorHasExit] remove reroll
@@ -81,13 +89,15 @@ kill @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep]
 # and the exit markers
 execute @e[type=minecraft:armor_stand, name=roomCenter, tag=reroll] ~ ~ ~ kill @e[type=minecraft:armor_stand, name="", rm=0, r=4.5]
 
-kill @e[type=minecraft:armor_stand, name=roomCenter, tag=!reroll]
-
+# when rerolling, revert back to checkConnection so we don't get stuck generating one room forever
+# summoned stands face +z by default, summoning at z -2 positions them for the coming teleport
+execute @e[tag=reroll] ~ ~ ~-2 summon minecraft:armor_stand checkConnection
+# this exit had keep when the room it came from was generated, restore it
+execute @e[tag=reroll] ~ ~ ~ tag @e[type=minecraft:armor_stand, name=checkConnection, c=1] add keep
+kill @e[type=minecraft:armor_stand, name=roomCenter]
 
 # and we can generate new rooms from the armor stands we teleported earlier
-tag @r[type=minecraft:armor_stand, name=checkConnection, tag=!floorExit c=1] add nextRoom
-# don't progress to a new room when rerolling
-execute @e[tag=reroll] ~ ~ ~ tag @e[tag=nextRoom] remove nextRoom
+tag @r[type=minecraft:armor_stand, name=checkConnection, tag=!floorExit, c=1] add nextRoom
 execute @e[tag=nextRoom] ^ ^ ^2 summon minecraft:armor_stand roomCenter
 kill @e[tag=nextRoom]
 
@@ -97,3 +107,5 @@ tag @e[tag=floorHasExit] remove floorHasExit
 tag @e[tag=reroll] remove reroll
 
 function genFloorExit
+
+# TODO: fix connection stand stacking when different paths meet
