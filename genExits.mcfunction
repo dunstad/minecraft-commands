@@ -74,9 +74,6 @@ execute @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep, c=1] ~ ~
 # check if we have an exit yet
 execute @e[type=minecraft:armor_stand, name=floorExit] ~ ~ ~ tag @e[tag=reroll] add floorHasExit
 
-# TODO: allow rooms we can't enter or exit if floorExit exists, to prevent infinite generation
-# wait... shouldn't this not happen?
-
 # keep this room if (we can enter and exit it) or (we can enter and there's a floor exit already)
 tag @e[tag=canEnter, tag=canExit] remove reroll
 tag @e[tag=canEnter, tag=floorHasExit] remove reroll
@@ -100,11 +97,12 @@ tag @r[type=minecraft:armor_stand, name=checkConnection, tag=!floorExit, c=1] ad
 execute @e[tag=nextRoom] ^ ^ ^2 summon minecraft:armor_stand roomCenter
 kill @e[tag=nextRoom]
 
+# fix for when two paths meet, causing double generation and orphaning exit stands
+execute @e[type=minecraft:armor_stand, name=roomCenter] ~ ~ ~ kill @e[type=minecraft:armor_stand, name=checkConnection, rm=0, r=4.5]
+
 tag @e[tag=canEnter] remove canEnter
 tag @e[tag=canExit] remove canExit
 tag @e[tag=floorHasExit] remove floorHasExit
 tag @e[tag=reroll] remove reroll
 
 function genFloorExit
-
-# TODO: fix connection stand stacking when different paths meet
