@@ -1,6 +1,5 @@
 # at the starting armor stand, we load a random room from a set of entrance rooms
 # make new rooms using the frames, the position works well with them and is inconvenient otherwise
-# TODO: load only from rooms in line with a floor selection stand
 execute @r[type=minecraft:armor_stand, name=randomRoom] ~ ~ ~ structure save randomRoom ~1 ~-3 ~-15 ~16 ~12 ~
 
 # randomize rotation
