@@ -4,6 +4,7 @@
 # TODO: why is only one stand getting saved?
 structure save roomStands ~-4 ~-2 ~-7 ~19 ~21 ~16 true memory false
 clone ~-4 ~-2 ~-7 ~19 ~21 ~16 ~-4 ~22 ~-7
+kill @e[x=~-4, y=~22, z=~-7, dx=23, dy=23, dz=23]
 structure load roomStands ~-4 ~22 ~-7
 
 # TODO: copy in six directions
