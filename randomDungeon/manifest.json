@@ -1,0 +1,29 @@
+{
+  "format_version": 2,
+  "header": {
+      "name": "Random Dungeon",
+      "description": "Generates random, customizable dungeons using a similar algorithm to Spelunky.",
+      "uuid": "8cfdc0e2-96ae-4602-9273-875e1736ad1d",
+      "version": [
+          1,
+          0,
+          0
+      ],
+      "min_engine_version": [
+          1,
+          14,
+          0
+      ]
+  },
+  "modules": [
+      {
+          "type": "data",
+          "uuid": "80573cf7-f029-414f-8523-74d8dd8c9367",
+          "version": [
+              1,
+              0,
+              0
+          ]
+      }
+  ]
+}
