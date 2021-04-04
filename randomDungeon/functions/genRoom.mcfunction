@@ -19,4 +19,4 @@ execute @r[type=minecraft:armor_stand, name=180_degrees] ~2 ~ ~2 structure load 
 execute @r[type=minecraft:armor_stand, name=270_degrees] ~2 ~ ~2 structure load randomRoom ~-7 ~-1 ~-7 270_degrees
 kill @e[tag=rotation]
 
-function genExits
+# function genExits

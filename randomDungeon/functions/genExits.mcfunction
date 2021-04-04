@@ -105,4 +105,4 @@ tag @e[tag=canExit] remove canExit
 tag @e[tag=floorHasExit] remove floorHasExit
 tag @e[tag=reroll] remove reroll
 
-function genFloorExit
+# function genFloorExit
