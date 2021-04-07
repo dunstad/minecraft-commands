@@ -19,4 +19,4 @@ execute @e[tag=fillStand] ~ ~ ~ summon minecraft:armor_stand roomCenter ^ ^ ^48
 execute @e[type=minecraft:armor_stand, name=roomCenter, c=16] ~ ~ ~ function genRoom
 
 # clean up the stands
-execute @e[type=minecraft:armor_stand, name=negXZBorder] ~ ~ ~ kill @e[type=minecraft:armor_stand, x=~1, y=~, z=~1, dx=63, dy=15, dz=63]
+execute @e[type=minecraft:armor_stand, name=negXZBorder] ~ ~ ~ kill @e[type=minecraft:armor_stand, tag=!decoration, x=~1, y=~, z=~1, dx=63, dy=15, dz=63]
