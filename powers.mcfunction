@@ -57,22 +57,3 @@ testforblocks 1 1 1 1 1 1 2 2 2
 # open door
 fill 1 2 3 4 5 6 air 0 replace quartz_block
 playsound tile.piston.in @p ~ ~ ~
-
-
-#  ------
-
-# TODO: design floor controls
-
-# copy floor button
-# probably need to execute per room
-execute @e[type=minecraft:armor_stand] ~ ~ ~ structure save roomCopy ~-4 ~-1 ~-8 ~19 ~24 ~15
-
-# delete floor button
-# kill exit and lastRoom stands
-kill @e[type=minecraft:armor_stand, name=!randomRoom, x=~-4, y=~-1, z=~-9, dx=23, dy=23, dz=99999]
-# kill randomRoom stands on top of other randomRoom stands
-execute @e[type=minecraft:armor_stand, name=randomRoom, x=~, y=~, z=~, dx=99999, dy=0, dz=0] ~ ~ ~ kill @e[type=minecraft:armor_stand, name=randomRoom, r=1]
-# fill air based on randomRoom location
-fill ~-4 ~-1 ~-19 ~19 ~24 ~4 air
-# kill remaining randomRoom stands
-kill @e[type=minecraft:armor_stand, name=randomRoom, x=~-4, y=~-1, z=~-9, dx=23, dy=23, dz=99999]

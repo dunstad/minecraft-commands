@@ -1,5 +1,7 @@
 # fill every spot with a random room before path generation
 
+# TODO: why does it sometimes miss one random spot?
+
 # summon four in a row
 execute @e[type=minecraft:armor_stand, name=negXZBorder] ~8 ~ ~8 summon minecraft:armor_stand roomCenter
 execute @e[type=minecraft:armor_stand, name=negXZBorder] ~8 ~ ~24 summon minecraft:armor_stand roomCenter
