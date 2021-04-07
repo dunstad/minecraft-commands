@@ -19,6 +19,7 @@
 - floorHasExit
 - nextRoom
 - rotation
+- generating
 - generated
 
 ### important names
