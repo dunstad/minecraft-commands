@@ -1,9 +1,5 @@
 # fill every spot with a random room before path generation
 
-# TODO: why does it sometimes miss one random spot?
-# genRoom designed for one roomCenter existing at a time
-# fulfill that promise here or make genRoom work on multiple roomCenters at once?
-
 # summon four in a row
 execute @e[type=minecraft:armor_stand, name=negXZBorder] ~8 ~ ~8 summon minecraft:armor_stand roomCenter
 execute @e[type=minecraft:armor_stand, name=negXZBorder] ~8 ~ ~24 summon minecraft:armor_stand roomCenter
