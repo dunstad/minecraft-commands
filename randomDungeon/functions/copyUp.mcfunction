@@ -5,8 +5,7 @@
 # fix: save a structure with blocks excluding the copy command blocks
 structure save roomStands ~0 ~-1 ~2 ~16 ~15 ~12
 # in case you overwrite something important
-# TODO: work out these coordinates
-# structure save deleted ~-4 ~-2 ~-7 ~19 ~21 ~16 
+structure save deleted ~-4 ~22 ~-7 ~19 ~45 ~16
 # clone the frame 
 # can't use the structure command or else command blocks copy infinitely
 clone ~-4 ~-2 ~-7 ~19 ~21 ~16 ~-4 ~22 ~-7
