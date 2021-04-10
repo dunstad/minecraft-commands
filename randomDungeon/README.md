@@ -18,6 +18,9 @@ Control which rooms are used in generation:
 - ```tag @e[tag=chosenFloor] remove chosenFloor```
 - ```tag @e[tag=floor1] add chosenFloor```
 
+Load in a new frame:
+- ```structure load frame ~~~```
+
 ---
 
 ### Tips & Limitations
