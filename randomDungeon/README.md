@@ -1,7 +1,7 @@
 # Random Dungeons
 
 ![Random Dungeons](./pack_icon.png "Random Dungeons") 
-## Generate Spelunky-style random dungeons in Minecraft (Bedrock Edition) with one command!
+### Generate Spelunky-style random dungeons in Minecraft (Bedrock Edition) with one command!
 
 ---
 
