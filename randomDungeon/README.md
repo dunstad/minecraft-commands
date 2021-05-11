@@ -62,6 +62,11 @@ Load in a new frame:
 - rotation
 - generating
 - generated
+- spawning
+- itemSpawned
+- monsterSpawned
+- teleport
+- inDungeon
 
 ### Important Names
 
@@ -78,3 +83,10 @@ Load in a new frame:
 - 90_degrees
 - 180_degrees
 - 270_Degrees
+- randomBarrels
+- barrelMarker
+- barrel
+- itemStorage
+- item, item1, ..., item5
+- monsterStorage
+- monster1, ..., monster5
