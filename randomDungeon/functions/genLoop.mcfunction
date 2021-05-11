@@ -13,9 +13,10 @@ execute @e[type=minecraft:armor_stand, name=roomCenter, c=1] ~ ~ ~ function genL
 execute @e[type=minecraft:armor_stand, name=negXZBorder] ~ ~ ~ tag @e[type=minecraft:armor_stand, x=~1, y=~, z=~1, dx=63, dy=15, dz=63] add inDungeon
 
 function randomMonsters
-# function randomItems
+function randomItems
 execute @e[type=minecraft:armor_stand, name=barrel] ~~~ function randomBarrel
 
 execute @e[type=minecraft:armor_stand, name=negXZBorder] ~ ~ ~ kill @e[type=minecraft:armor_stand, name="", tag=!decoration, x=~1, y=~, z=~1, dx=63, dy=15, dz=63]
 kill @e[type=minecraft:armor_stand, name=negXZBorder, c=1]
 kill @e[type=minecraft:armor_stand, name=posXZBorder, c=1]
+kill @e[type=minecraft:armor_stand, name=floorExit, c=1]

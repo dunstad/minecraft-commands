@@ -84,6 +84,8 @@ execute @e[type=minecraft:armor_stand, name=roomCenter, tag=!reroll] ~ ~ ~ tag @
 kill @e[type=minecraft:armor_stand, name=checkConnection, tag=!keep]
 # and the exit markers
 execute @e[type=minecraft:armor_stand, name=roomCenter, tag=reroll] ~ ~ ~ kill @e[type=minecraft:armor_stand, name="", rm=0, r=4.5]
+# and basically any other entities in here
+execute @e[type=minecraft:armor_stand, name=roomCenter, tag=reroll] ~ ~ ~ kill @e[name=!roomCenter, name=!checkConnection, name=!floorExit, x=~-7, y=~-1, z=~-7, dx=15, dy=15, dz=15]
 
 # when rerolling, revert back to checkConnection so we don't get stuck generating one room forever
 # summoned stands face +z by default, summoning at z -2 positions them for the coming teleport
